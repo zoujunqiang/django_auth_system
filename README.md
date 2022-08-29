@@ -6,11 +6,17 @@
 一.目录结构
 1.文件夹说明
 ├─auth_system   # 入口app
+
 ├─common         # 自定义函数
+
 ├─login               # 登陆app
+
 ├─sql                  # sql文件
+
 ├─static              # 静态文件
+
 ├─sys_manage   #系统管理app
+
 └─templates        #html文件
 
 
@@ -43,6 +49,7 @@
 
 
 三. 项目部署
+
 1.github下载项目
 
 2.安装项目依赖、第三方安装包

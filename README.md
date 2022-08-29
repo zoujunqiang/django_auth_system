@@ -55,13 +55,13 @@
 
 1.github下载项目
 
-2.安装项目依赖、第三方安装包
+2.安装项目依赖、第三方包
 
   pip3 install -r requirements.txt
 
 3.安装mysql,   centos7安装mysql5.7可参考以下博客
 
-Centos7 安装mysql5.7_z60015260的博客-CSDN博客
+  https://blog.csdn.net/qq_27454363/article/details/126517907?spm=1001.2014.3001.5501
 
 4.创建数据库auth_system
 

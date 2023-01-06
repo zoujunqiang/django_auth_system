@@ -20,6 +20,8 @@ class User(models.Model):
 
     class Meta:
         db_table = 'sys_user'
+        verbose_name = '用户'
+        verbose_name_plural = verbose_name
 
 
 class Role(models.Model):
@@ -36,6 +38,8 @@ class Role(models.Model):
 
     class Meta:
         db_table = 'sys_role'
+        verbose_name = '角色'
+        verbose_name_plural = verbose_name
 
 
 class Power(models.Model):
@@ -54,6 +58,8 @@ class Power(models.Model):
 
     class Meta:
         db_table = 'sys_power'  # 系统权限
+        verbose_name = '系统权限'
+        verbose_name_plural = verbose_name
 
 
 class RolePower(models.Model):
@@ -64,3 +70,5 @@ class RolePower(models.Model):
 
     class Meta:
         db_table = 'role_power'  # 角色权限
+        verbose_name = '角色权限'
+        verbose_name_plural = verbose_name

@@ -38,7 +38,7 @@ urlpatterns = [
     path('power-sub-query', power_manage.power_sub_query),         # 权限子项查询
     path('power-delete', power_manage.power_delete),               # 权限删除
     path('power-multi-delete', power_manage.power_multi_delete),   # 权限批量删除
-    path('power-cell-edit', power_manage.power_cell_edit),         # 权限表格单元边界
+    path('power-cell-edit', power_manage.power_cell_edit),         # 权限表格单元编辑
     path('power-enable', power_manage.power_enable),               # 权限使能
     # 日志管理
     path('log-manage', log_manage.log_manage),                     # 日志管理

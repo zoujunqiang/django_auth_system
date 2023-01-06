@@ -1,5 +1,6 @@
 # encoding:utf-8
 from django.contrib import admin
+
 from .models import User, Role, Power, RolePower
 
 # 设置adminsite 基本信息
@@ -16,8 +17,9 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ['id_number', 'user_name', 'department', 'position', 'role_id', 'role_des', 'user_status', 'email',
                     'create_time']
     # 编辑页面显示
-    fields = ('id_number', 'id_password', 'user_name', 'department', 'position', 'role_id', 'role_des', 'user_status', 'email',
-              'create_time')
+    fields = (
+    'id_number', 'id_password', 'user_name', 'department', 'position', 'role_id', 'role_des', 'user_status', 'email',
+    'create_time')
 
     # 将字段设置为只读
     readonly_fields = ['role_id', 'role_des', 'user_status', 'create_time']
@@ -69,7 +71,8 @@ class RoleAdmin(admin.ModelAdmin):
 
 class PowerAdmin(admin.ModelAdmin):
     # 显示相应字段
-    list_display = ['name', 'type', 'code', 'url', 'open_type', 'parent_id', 'icon', 'sort', 'enable', 'create_time', 'update_time']
+    list_display = ['name', 'type', 'code', 'url', 'open_type', 'parent_id', 'icon', 'sort', 'enable', 'create_time',
+                    'update_time']
 
     # 编辑页面显示
     fields = ('name', 'type', 'code', 'url', 'open_type', 'parent_id', 'icon', 'sort', 'enable')
@@ -81,7 +84,8 @@ class PowerAdmin(admin.ModelAdmin):
     list_filter = ['name', 'code', 'enable']
 
     # 搜索字段
-    search_fields = ['name', 'type', 'code', 'url', 'open_type', 'parent_id', 'icon', 'sort', 'enable', 'create_time', 'update_time']
+    search_fields = ['name', 'type', 'code', 'url', 'open_type', 'parent_id', 'icon', 'sort', 'enable', 'create_time',
+                     'update_time']
 
     # 排序
     ordering = ['name']

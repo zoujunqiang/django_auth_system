@@ -17,6 +17,8 @@ class Logo(models.Model):
 
     class Meta:
         db_table = 'web_logo'
+        verbose_name = 'logo信息'
+        verbose_name_plural = verbose_name
 
 
 class Log(models.Model):
@@ -32,3 +34,5 @@ class Log(models.Model):
 
     class Meta:
         db_table = 'sys_log'
+        verbose_name = '系统日志'
+        verbose_name_plural = verbose_name

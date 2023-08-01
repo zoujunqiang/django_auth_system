@@ -36,9 +36,28 @@
 		
 		<hr>
 		
-		<p id="powerContent">
-			
-		</p>
+<!-- 		<table class="layui-table">
+					<div class='layui-form-item'>
+						<colgroup>
+						  <col width="100">
+						  <col width="120">
+						  <col>
+						</colgroup>
+						<thead>
+						  <tr>
+						    <th>目录</th>
+						    <th>页面</th>
+						    <th>功能</th>
+						  </tr>
+						</thead>
+						<tbody>
+								<p id="powerContent"></p>
+								</tbody>
+					</dir>
+		</table> -->
+		
+		<p id="powerContent"></p>
+		
 
     <div class="layui-form-item">
         <div class="layui-input-block">
@@ -74,7 +93,7 @@
 					success:function(result){
 						var list = result.data;
 						console.log(result.data);
-						var str = "",str1="", str2="",str3="", str4="";
+						var str = "",str1="", str2="",str3="", str4=""; str5="";
 						var pageCount=0, buttonCount=0;
 						for (var k=0; k<list.length;k++) {
 							
@@ -87,7 +106,7 @@
 								pageCount +=1;
 								str = "",str1="", str2="";
 								let page_name='page'+pageCount;
-								str += "<input type='checkbox' name=\""+page_name+"\" value=\""+menuList[i].menuId+"\" title=\""+firstInput+"\" "+menuList[i].menuCheckbox+">";
+								// str += "<input type='checkbox' name=\""+page_name+"\" value=\""+menuList[i].menuId+"\" title=\""+firstInput+"\" "+menuList[i].menuCheckbox+">";
 								var buttonIdList = menuList[i].buttonId;
 								var buttonNameList = menuList[i].buttonName;
 								var buttonCheckboxList = menuList[i].buttonCheckbox;
@@ -96,15 +115,35 @@
 									let button_name='button'+buttonCount;
 									str += "<input type='checkbox' name=\""+button_name+"\"  value=\""+buttonIdList[j]+"\" title=\""+buttonNameList[j]+"\" "+buttonCheckboxList[j]+">"
 								}
-								str1 = "<div class='layui-input-block'>"+str+"</div>"
-								str2 = "<label class='layui-form-label'>"+menuList[i].menuName+"</label>"
-								str3 += "<div class='layui-form-item'>"+str2+" "+str1+"</div>"
+								str1 = "<td class='layui-input-block'>"+str+"</td>" //页面访问 + 功能明细
+								// str2 = "<td>"+menuList[i].menuName+"</td>"  // 菜单名称
+								str2 = "<td> <input type='checkbox' name=\""+page_name+"\" value=\""+menuList[i].menuId+"\" title=\""+menuList[i].menuName+"\" "+menuList[i].menuCheckbox+"></td>"  // 菜单名称
+								str5 = "<td style='font-size: 14px'>"+dirName+"</td>"  // 目录名称
+								str3 += "<tr>"+str5+" "+str2+" "+str1+"</tr>"
 							}
-							str4 += "<label class='layui-form-label' style='font-size: 16px;'>"+dirName+"</label>"+str3+""
+							str4 += "<table class='layui-table' lay-even='' lay-skin='row'>\
+										<div class='layui-form-item'>\
+											<colgroup>\
+											  <col width='100'>\
+											  <col width='120'>\
+											  <col>\
+											</colgroup>\
+											<thead>\
+											  <tr>\
+												<th style='font-size: 16px'>目录</th>\
+												<th style='font-size: 16px'>页面权限</th>\
+												<th style='font-size: 16px'>功能权限</th>\
+											  </tr>\
+											</thead>\
+											<tbody>\
+													"+str3+" \
+											</tbody>\
+										</dir>\
+									</table>"
 							str3="";
 						}
 						
-					    // console.log(str4);
+					    console.log(str4);
 						$('#powerContent').html(str4);
 						form.render('')   //重新渲染 
 					},
